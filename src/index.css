@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@300&family=Noto+Sans+Mono:wght@200;300;400&family=Noto+Sans:wght@200;300;400;500;600;700&family=Raleway:wght@400;500;600&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+/* ------------------------------------------------------ */
+:root {
+  --white: #fff;
+  --blue: #6495ed;
+}
+
+* {
+  /* to override the default css styles of all browsers */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: solid 1px red; */
+}
+
+body {
+  font-family: "noto-sans", "inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  /* font-size: 1.3rem; */
+  /* color: var(--text-black); */
+  background-color: #ffffff;
+
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+/* -------------- Hitarth's Event Calendar -------------- */
+@media (max-width: 670px) {
+  .cal_range {
+    @apply flex items-stretch flex-col mx-4 my-0;
+    /* Make child elements stretch to fill the container */
+    /* margin: 1rem; */
+  }
+  .cal_range .cal_range-time {
+    @apply bg-[#e1e1e1] flex items-center mr-8 mb-4 p-4 rounded-[5px];
+  }
+  .cal_range .cal_box {
+    @apply mr-8 mb-4 w-auto min-w-fit;
+    /* margin-top: 1rem; */
+    /* width: 100px; */
+  }
+}
+
+@media (max-width: 670px) {
+  form.cal_navbarSearch {
+    @apply m-8;
+  }
+  .cal_time-and-date {
+    @apply whitespace-nowrap;
+  }
+  .cal_header {
+    @apply text-[smaller] mb-8 px-4 py-0 rounded-[10px];
+  }
+  .cal_header .cal_profile {
+    @apply whitespace-nowrap;
+  }
+  .cal_profile img {
+    @apply h-[40px] w-[40px] mb-2 rounded-[50%];
+  }
+
+  
+}
+
+/* ------------------------------------------------------ */
+
+
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+@layer base {
+  :root{
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  /* body {
+    @apply bg-background text-foreground;
+  } */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+
+/* HeroCards background shadow */
+.shadow {
+  position: absolute;
+  background: hsl(var(--primary) / 0%);
+  border-radius: 24px;
+  rotate: 35deg;
+
+  width: 260px;
+  top: 200px;
+  height: 400px;
+  filter: blur(150px);
+  animation: shadow-slide infinite 4s linear alternate;
+}
+
+@keyframes shadow-slide {
+  from {
+    background: hsl(var(--primary) / 20%);
+    right: 460px;
+  }
+  to {
+    background: hsl(var(--primary) / 80%);
+    right: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shadow {
+    top: 70px;
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 460px;
+    }
+    to {
+      background: hsl(var(--primary) / 50%);
+      right: 160px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow {
+    top: 70px;
+    width: 100px;
+    height: 350px;
+    filter: blur(60px);
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 280px;
+    }
+    to {
+      background: hsl(var(--primary) / 30%);
+      right: 100px;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* HeroCards background shadow */
+.shadow {
+  position: absolute;
+  background: hsl(var(--primary) / 0%);
+  border-radius: 24px;
+  rotate: 35deg;
+
+  width: 260px;
+  top: 200px;
+  height: 400px;
+  filter: blur(150px);
+  animation: shadow-slide infinite 4s linear alternate;
+}
+
+@keyframes shadow-slide {
+  from {
+    background: hsl(var(--primary) / 20%);
+    right: 460px;
+  }
+  to {
+    background: hsl(var(--primary) / 80%);
+    right: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shadow {
+    top: 70px;
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 460px;
+    }
+    to {
+      background: hsl(var(--primary) / 50%);
+      right: 160px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow {
+    top: 70px;
+    width: 100px;
+    height: 350px;
+    filter: blur(60px);
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 280px;
+    }
+    to {
+      background: hsl(var(--primary) / 30%);
+      right: 100px;
+    }
+  }
+}
